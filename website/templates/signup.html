@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whisk - Create Account</title>
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/login_styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="p-4 p-md-5 auth-card">
+        
+        <!-- SIGNUP FORM -->
+        <form id="signupForm" method="post" action="{{ url_for('auth.sign_up') }}">
+          <h4 class="mb-1 fw-semibold">Create account</h4>
+          <p class="text-secondary mb-4 auth-subtitle">Join Whisk today</p>
+
+          <div class="mb-3">
+            <label for="signupRole" class="form-label small text-secondary"
+              >I am a</label
+            >
+            <select
+              class="form-select auth-input"
+              id="signupRole"
+              name="role"
+              required
+            >
+              <option value="customer">Customer</option>
+              <option value="vendor">Vendor</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="signupEmail" class="form-label small text-secondary"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control auth-input"
+              id="signupEmail"
+              name="email"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="signupUsername" class="form-label small text-secondary"
+              >Username</label
+            >
+            <input
+              type="text"
+              class="form-control auth-input"
+              id="signupUsername"
+              name="username"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="signupPassword" class="form-label small text-secondary"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control auth-input"
+              id="signupPassword"
+              name="password"
+              required
+            />
+          </div>
+
+          <div class="mb-2">
+            <label
+              for="signupPasswordConfirm"
+              class="form-label small text-secondary"
+              >Confirm password</label
+            >
+            <input
+              type="password"
+              class="form-control auth-input"
+              id="signupPasswordConfirm"
+              name="password_confirm"
+              required
+            />
+          </div>
+
+          <div class="text-end mb-4">
+            <a href="{{ url_for('auth.login') }}" id="showLogin" class="small auth-link"
+              >Already have an account? Login</a
+            >
+          </div>
+
+          <button type="submit" class="btn w-100 auth-btn">Sign up</button>
+        </form>
+        
+      </div>
+    </div>
+  </body>
+</html>

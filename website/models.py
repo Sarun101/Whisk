@@ -34,7 +34,7 @@ class MenuItem(db.Model):
     vendor: Mapped["User"] = relationship(back_populates="menu_items")
 
 
-# 4. Order Model (One Order -> Many OrderItems)
+# 4. Order Model (One Order with  Many OrderItems)
 class Order(db.Model):
     __tablename__ = "order"
 
